@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b District:
+  = @taluk.district
+%p
+  %b Name:
+  = @taluk.name
+%p
+  %b Code:
+  = @taluk.code
+
+= link_to 'Edit', edit_taluk_path(@taluk)
+\|
+= link_to 'Back', taluks_path

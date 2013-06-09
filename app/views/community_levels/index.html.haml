@@ -1,0 +1,21 @@
+%h1 Listing community_levels
+
+%table
+  %tr
+    %th Name
+    %th Code
+    %th
+    %th
+    %th
+
+  - @community_levels.each do |community_level|
+    %tr
+      %td= community_level.name
+      %td= community_level.code
+      %td= link_to 'Show', community_level
+      %td= link_to 'Edit', edit_community_level_path(community_level)
+      %td= link_to 'Destroy', community_level, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Community level', new_community_level_path

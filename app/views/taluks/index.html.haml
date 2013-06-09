@@ -1,0 +1,23 @@
+%h1 Listing taluks
+
+%table
+  %tr
+    %th District
+    %th Name
+    %th Code
+    %th
+    %th
+    %th
+
+  - @taluks.each do |taluk|
+    %tr
+      %td= taluk.district
+      %td= taluk.name
+      %td= taluk.code
+      %td= link_to 'Show', taluk
+      %td= link_to 'Edit', edit_taluk_path(taluk)
+      %td= link_to 'Destroy', taluk, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Taluk', new_taluk_path
