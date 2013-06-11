@@ -2,7 +2,7 @@ class AlterCommunicationTable < ActiveRecord::Migration
 
   def up
     add_column :communities,:product_id,:integer
-    remove_column :communities,:area
+    remove_column :communities,:area_id
     change_table :communities do |t|
       t.change :status,:integer
     end  
