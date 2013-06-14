@@ -1,18 +1,19 @@
 AgricultureDesk::Application.routes.draw do
   
   resources :communities
-  resources :community_levels
-  resources :areas
-  resources :taluks
-  resources :districts
-  resources :states
-  resources :countries
-  resources :community_types
-
-
-  root :to => "sites#index"
-
-  devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
+  namespace :super_admin do
+    resources :community_levels
+    resources :areas
+    resources :taluks
+    resources :districts
+    resources :states
+    resources :countries
+    resources :products
+    resources :master_records
+    resources :community_types
+   end
+   root :to => "sites#index"
+   devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

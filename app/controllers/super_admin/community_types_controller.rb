@@ -1,4 +1,4 @@
-class CommunityTypesController < ApplicationController
+class  SuperAdmin::CommunityTypesController < ApplicationController
   # GET /community_types
   # GET /community_types.json
   def index

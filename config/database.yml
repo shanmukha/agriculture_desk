@@ -16,7 +16,7 @@
 development:
   adapter: mysql2
   encoding: utf8
-  database: agriculture_desk
+  database: agriculturedesk
   username: root
   password: password
   #socket: /tmp/mysql.sock
@@ -27,13 +27,13 @@ development:
 test:
   adapter: mysql2
   encoding: utf8
-  database: agriculture_desk
+  database: agriculturedesk
   username: root
   password: password
 production:
   adapter: mysql2
   encoding: utf8
-  database: agriculture_desk
+  database: agriculturedesk
   username: root
   password: root
 

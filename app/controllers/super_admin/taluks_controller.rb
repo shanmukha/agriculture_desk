@@ -1,4 +1,4 @@
-class TaluksController < ApplicationController
+class  SuperAdmin::TaluksController < ApplicationController
   # GET /taluks
   # GET /taluks.json
   def index

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130317114304) do
+ActiveRecord::Schema.define(:version => 20130614094855) do
 
   create_table "areas", :force => true do |t|
     t.integer  "taluk_id"
@@ -24,27 +24,18 @@ ActiveRecord::Schema.define(:version => 20130317114304) do
   create_table "communities", :force => true do |t|
     t.string   "name"
     t.integer  "community_type_id"
-    t.boolean  "status"
-    t.integer  "area_id"
+    t.integer  "status"
     t.integer  "community_level_id"
     t.text     "description"
-    t.string   "code"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
+    t.integer  "product_id"
   end
 
   create_table "community_levels", :force => true do |t|
     t.string   "name"
-    t.string   "code"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
-  end
-
-  create_table "community_roles", :id => false, :force => true do |t|
-    t.integer "role_id"
-    t.integer "user_id"
-    t.integer "community_id"
-    t.boolean "status"
   end
 
   create_table "community_types", :force => true do |t|
@@ -69,11 +60,12 @@ ActiveRecord::Schema.define(:version => 20130317114304) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "role_communities", :force => true do |t|
-    t.integer "role_id"
-    t.integer "user_id"
-    t.integer "community_id"
-    t.boolean "status"
+  create_table "products", :force => true do |t|
+    t.string   "name"
+    t.string   "code"
+    t.integer  "status"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "roles", :force => true do |t|
@@ -99,10 +91,12 @@ ActiveRecord::Schema.define(:version => 20130317114304) do
   end
 
   create_table "user_role_communities", :force => true do |t|
-    t.integer "role_id"
-    t.integer "user_id"
-    t.integer "community_id"
-    t.boolean "status"
+    t.integer  "role_id"
+    t.integer  "user_id"
+    t.integer  "community_id"
+    t.integer  "status"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "users", :force => true do |t|

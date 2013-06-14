@@ -1,3 +1,3 @@
 class CommunityLevel < ActiveRecord::Base
-  attr_accessible :code, :name
+  attr_accessible  :name
 end

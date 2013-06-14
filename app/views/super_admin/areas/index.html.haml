@@ -1,0 +1,23 @@
+%h1 Listing areas
+
+%table
+  %tr
+    %th Taluk
+    %th Name
+    %th Code
+    %th
+    %th
+    %th
+
+  - @areas.each do |area|
+    %tr
+      %td= area.taluk
+      %td= area.name
+      %td= area.code
+      %td= link_to 'Show', [:super_admin,area]
+      %td= link_to 'Edit', edit_super_admin_area_path(area)
+      %td= link_to 'Destroy', [:super_admin,area], method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Area', new_super_admin_area_path

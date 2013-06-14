@@ -1,4 +1,4 @@
-class DistrictsController < ApplicationController
+class  SuperAdmin::DistrictsController < ApplicationController
   # GET /districts
   # GET /districts.json
   def index

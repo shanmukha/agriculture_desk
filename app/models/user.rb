@@ -2,8 +2,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :omniauthable, :authentication_keys =>[:login]
   attr_accessor :login
-        attr_accessible :email, :uuid,:token,:first_name,:last_name,:login,:date_of_birth,:proof_verification, :username,:phone, :landline,:password,:password_confirmation,:address,:city,:county,:state,:village,:pin,:active 
-        attr_accessible  :mobile, :country_id, :state_id, :other_state, :district, :taluk, :village_or_area, :zip_code
+        attr_accessible :email, :uuid,:token,:first_name,:last_name,:login,:date_of_birth,:proof_verification, :username,:phone, :landline,:password,:password_confirmation,:address,:city,:active 
+     attr_accessible  :mobile, :country_id, :state_id, :other_state, :district, :taluk, :village_or_area, :zip_code
   validates_presence_of :username
   #validates_presence_of :first_name
   validates_uniqueness_of :email, :unless => lambda{ |user| user.email.blank? } 
@@ -85,6 +85,14 @@ class User < ActiveRecord::Base
     end 
   end 
   
+  def is_farmer_and_buyer?(community)
+    role =  Role.get_role_object("farmer and buyer")
+    if self.role_community_object(community,role)
+      return true
+    else
+      return false
+    end 
+  end 
   def role_community_object(community,role)
      self.user_role_communities.where(:community_id => community.id,:role_id => role.id).first  
   end

@@ -17,7 +17,7 @@
     <div><%= f.label :landline,'Landline Number' %><br />
     <%= f.text_field :landline %></div> 
     <div><%= f.label :address,'Address' %><br />
-    <%= f.text_field :address %></div> 
+    <%= f.text_area :address,:rows => 5,:columns => 5 %></div> 
     <div><%= f.label :country_id,'Country' %><br />
     <%= f.select :country_id,[1,2] %></div> 
     <div><%= f.label :state_id,'State' %><br />

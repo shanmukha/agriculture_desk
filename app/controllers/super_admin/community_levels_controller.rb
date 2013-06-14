@@ -1,4 +1,4 @@
-class CommunityLevelsController < ApplicationController
+class  SuperAdmin::CommunityLevelsController < ApplicationController
   # GET /community_levels
   # GET /community_levels.json
   def index

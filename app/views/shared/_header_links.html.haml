@@ -4,12 +4,5 @@
     \|
     = link_to "Sign up", new_registration_path(User.new)
   - else 
-    = link_to "Community", communities_path
-    = link_to "Community Type", community_types_path
-    = link_to "Community Level", community_levels_path
-    = link_to "Area", areas_path
-    = link_to "District", districts_path
-    = link_to "Taluk", taluks_path
-    = link_to "State", states_path
-    = link_to "Country", countries_path
+    = link_to "Communities", communities_path
     = link_to "Sign Out", destroy_user_session_path, :method => :delete

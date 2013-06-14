@@ -23,6 +23,7 @@ gem "meta_search"
 gem 'paperclip'
 gem "nested_has_many_through"
 gem 'ancestry'
+gem 'prawn', '0.12.0'
 gem 'googlecharts'
 #gem 'activeadmin'
 #gem "capybara-envjs"

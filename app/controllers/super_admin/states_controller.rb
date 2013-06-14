@@ -1,4 +1,4 @@
-class StatesController < ApplicationController
+class  SuperAdmin::StatesController < ApplicationController
   # GET /states
   # GET /states.json
   def index

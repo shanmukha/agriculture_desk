@@ -1,4 +1,4 @@
-class CountriesController < ApplicationController
+class  SuperAdmin::CountriesController < ApplicationController
   # GET /countries
   # GET /countries.json
   def index
