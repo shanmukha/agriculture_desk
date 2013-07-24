@@ -1,4 +1,4 @@
-= form_for @taluk do |f|
+= form_for [:super_admin,@taluk] do |f|
   - if @taluk.errors.any?
     #error_explanation
       %h2= "#{pluralize(@taluk.errors.count, "error")} prohibited this taluk from being saved:"

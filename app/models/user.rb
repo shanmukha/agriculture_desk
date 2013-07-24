@@ -23,11 +23,11 @@ class User < ActiveRecord::Base
   end
   
   def self.create_from_fb_callback(auth)
-    user = User.new(email:auth.info.email,first_name:auth.extra.raw_info.name, password:Devise.friendly_token[0,20], 
+    @user = User.new(email:auth.info.email,first_name:auth.extra.raw_info.name, password:Devise.friendly_token[0,20], 
                    uuid:auth.uid,token:auth.credentials.token,username:auth.extra.raw_info.name)               
     #user.avatar = open(auth.info.image.gsub('square', 'large')) 
-    user.save
-    user
+    @user.save
+    return  @user
   end
   
   
@@ -93,7 +93,11 @@ class User < ActiveRecord::Base
       return false
     end 
   end 
+  
   def role_community_object(community,role)
-     self.user_role_communities.where(:community_id => community.id,:role_id => role.id).first  
+     p =  self.user_role_communities.where(:community_id => community.id,:role_id => role.id).first  
+     puts"ppppppppppppppp #{role.id}"
+     puts"ppppppppppppppp111 #{community.id}"
+     return p
   end
  end

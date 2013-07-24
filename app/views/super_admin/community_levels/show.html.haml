@@ -3,10 +3,7 @@
 %p
   %b Name:
   = @community_level.name
-%p
-  %b Code:
-  = @community_level.code
 
-= link_to 'Edit', edit_community_level_path(@community_level)
+= link_to 'Edit', edit_super_admin_community_level_path(@community_level)
 \|
-= link_to 'Back', community_levels_path
+= link_to 'Back', super_admin_community_levels_path

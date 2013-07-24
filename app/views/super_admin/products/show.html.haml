@@ -1,2 +1,8 @@
-%h1 Products#show
-%p Find me in app/views/products/show.html.haml
+%p#notice= notice
+
+%p
+  %b Name:
+  = @product.name
+= link_to 'Edit', edit_super_admin_product_path(@product)
+\|
+= link_to 'Back', super_admin_products_path

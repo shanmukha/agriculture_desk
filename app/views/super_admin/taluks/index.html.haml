@@ -14,9 +14,9 @@
       %td= taluk.district
       %td= taluk.name
       %td= taluk.code
-      %td= link_to 'Show', taluk
-      %td= link_to 'Edit', edit_taluk_path(taluk)
-      %td= link_to 'Destroy', taluk, method: :delete, data: { confirm: 'Are you sure?' }
+      %td= link_to 'Show', [:super_admin,taluk]
+      %td= link_to 'Edit', edit_super_admin_taluk_path(taluk)
+      %td= link_to 'Destroy', [:super_admin,taluk], method: :delete, data: { confirm: 'Are you sure?' }
 
 %br
 

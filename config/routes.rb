@@ -13,7 +13,7 @@ AgricultureDesk::Application.routes.draw do
     resources :community_types
    end
    root :to => "sites#index"
-   devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
+   devise_for :users
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

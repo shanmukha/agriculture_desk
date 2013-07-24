@@ -1,2 +1,7 @@
-%h1 Products#edit
-%p Find me in app/views/products/edit.html.haml
+%h1 Editing product
+
+= render 'form'
+
+= link_to 'Show', [:super_admin, @product]
+\|
+= link_to 'Back', super_admin_products_path

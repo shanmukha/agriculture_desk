@@ -10,10 +10,10 @@
   - @community_types.each do |community_type|
     %tr
       %td= community_type.name
-      %td= link_to 'Show', community_type
-      %td= link_to 'Edit', edit_community_type_path(community_type)
-      %td= link_to 'Destroy', community_type, method: :delete, data: { confirm: 'Are you sure?' }
+      %td= link_to 'Show', [:super_admin,community_type]
+      %td= link_to 'Edit', edit_super_admin_community_type_path(community_type)
+      %td= link_to 'Destroy', [:super_admin,community_type], method: :delete, data: { confirm: 'Are you sure?' }
 
 %br
 
-= link_to 'New Community type', new_community_type_path
+= link_to 'New Community type', new_super_admin_community_type_path

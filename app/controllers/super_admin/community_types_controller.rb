@@ -44,7 +44,7 @@ class  SuperAdmin::CommunityTypesController < ApplicationController
 
     respond_to do |format|
       if @community_type.save
-        format.html { redirect_to @community_type, notice: 'Community type was successfully created.' }
+        format.html { redirect_to super_admin_community_types_path, notice: 'Community type was successfully created.' }
         format.json { render json: @community_type, status: :created, location: @community_type }
       else
         format.html { render action: "new" }
@@ -60,7 +60,7 @@ class  SuperAdmin::CommunityTypesController < ApplicationController
 
     respond_to do |format|
       if @community_type.update_attributes(params[:community_type])
-        format.html { redirect_to @community_type, notice: 'Community type was successfully updated.' }
+        format.html { redirect_to super_admin_community_types_path, notice: 'Community type was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -76,7 +76,7 @@ class  SuperAdmin::CommunityTypesController < ApplicationController
     @community_type.destroy
 
     respond_to do |format|
-      format.html { redirect_to community_types_url }
+      format.html { redirect_to super_admin_community_types_path }
       format.json { head :no_content }
     end
   end

@@ -14,10 +14,10 @@
       %td= country.name
       %td= country.code
       %td= country.display
-      %td= link_to 'Show', country
-      %td= link_to 'Edit', edit_country_path(country)
-      %td= link_to 'Destroy', country, method: :delete, data: { confirm: 'Are you sure?' }
+      %td= link_to 'Show', [:super_admin,country]
+      %td= link_to 'Edit', edit_super_admin_country_path(country)
+      %td= link_to 'Destroy', [:super_admin,country], method: :delete, data: { confirm: 'Are you sure?' }
 
 %br
 
-= link_to 'New Country', new_country_path
+= link_to 'New Country', new_super_admin_country_path

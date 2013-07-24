@@ -44,7 +44,7 @@ class  SuperAdmin::TaluksController < ApplicationController
 
     respond_to do |format|
       if @taluk.save
-        format.html { redirect_to @taluk, notice: 'Taluk was successfully created.' }
+        format.html { redirect_to super_admin_taluks_path, notice: 'Taluk was successfully created.' }
         format.json { render json: @taluk, status: :created, location: @taluk }
       else
         format.html { render action: "new" }
@@ -60,7 +60,7 @@ class  SuperAdmin::TaluksController < ApplicationController
 
     respond_to do |format|
       if @taluk.update_attributes(params[:taluk])
-        format.html { redirect_to @taluk, notice: 'Taluk was successfully updated.' }
+        format.html { redirect_to super_admin_taluks_path, notice: 'Taluk was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -76,7 +76,7 @@ class  SuperAdmin::TaluksController < ApplicationController
     @taluk.destroy
 
     respond_to do |format|
-      format.html { redirect_to taluks_url }
+      format.html { redirect_to super_admin_taluks_path }
       format.json { head :no_content }
     end
   end

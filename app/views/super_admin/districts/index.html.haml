@@ -14,10 +14,10 @@
       %td= district.state
       %td= district.name
       %td= district.code
-      %td= link_to 'Show', district
-      %td= link_to 'Edit', edit_district_path(district)
-      %td= link_to 'Destroy', district, method: :delete, data: { confirm: 'Are you sure?' }
+      %td= link_to 'Show', super_admin_district
+      %td= link_to 'Edit', edit_super_admin_district_path(district)
+      %td= link_to 'Destroy', super_admin_district, method: :delete, data: { confirm: 'Are you sure?' }
 
 %br
 
-= link_to 'New District', new_district_path
+= link_to 'New District', new_super_admin_district_path

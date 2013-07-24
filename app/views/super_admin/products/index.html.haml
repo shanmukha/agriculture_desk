@@ -1,3 +1,19 @@
+%h1 Listing products
 
-  
- 
+%table
+  %tr
+    %th Name
+    %th
+    %th
+    %th
+
+  - @products.each do |product|
+    %tr
+      %td= product.name
+      %td= link_to 'Show', [:super_admin,product]
+      %td= link_to 'Edit', edit_super_admin_product_path(product)
+      %td= link_to 'Destroy', [:super_admin,product], method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New product', new_super_admin_product_path

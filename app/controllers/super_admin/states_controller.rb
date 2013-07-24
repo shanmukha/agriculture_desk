@@ -44,7 +44,7 @@ class  SuperAdmin::StatesController < ApplicationController
 
     respond_to do |format|
       if @state.save
-        format.html { redirect_to @state, notice: 'State was successfully created.' }
+        format.html { redirect_to super_admin_states_path, notice: 'State was successfully created.' }
         format.json { render json: @state, status: :created, location: @state }
       else
         format.html { render action: "new" }
@@ -60,7 +60,7 @@ class  SuperAdmin::StatesController < ApplicationController
 
     respond_to do |format|
       if @state.update_attributes(params[:state])
-        format.html { redirect_to @state, notice: 'State was successfully updated.' }
+        format.html { redirect_to super_admin_states_path, notice: 'State was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -76,7 +76,7 @@ class  SuperAdmin::StatesController < ApplicationController
     @state.destroy
 
     respond_to do |format|
-      format.html { redirect_to states_url }
+      format.html { redirect_to super_admin_states_path }
       format.json { head :no_content }
     end
   end

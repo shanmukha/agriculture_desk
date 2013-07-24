@@ -44,7 +44,7 @@ class  SuperAdmin::CommunityLevelsController < ApplicationController
 
     respond_to do |format|
       if @community_level.save
-        format.html { redirect_to @community_level, notice: 'Community level was successfully created.' }
+        format.html { redirect_to super_admin_community_levels_path, notice: 'Community level was successfully created.' }
         format.json { render json: @community_level, status: :created, location: @community_level }
       else
         format.html { render action: "new" }
@@ -60,7 +60,7 @@ class  SuperAdmin::CommunityLevelsController < ApplicationController
 
     respond_to do |format|
       if @community_level.update_attributes(params[:community_level])
-        format.html { redirect_to @community_level, notice: 'Community level was successfully updated.' }
+        format.html { redirect_to super_admin_community_levels_path, notice: 'Community level was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
@@ -76,7 +76,7 @@ class  SuperAdmin::CommunityLevelsController < ApplicationController
     @community_level.destroy
 
     respond_to do |format|
-      format.html { redirect_to community_levels_url }
+      format.html { redirect_to super_admin_community_levels_path }
       format.json { head :no_content }
     end
   end

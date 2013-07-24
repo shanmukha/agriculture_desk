@@ -14,10 +14,10 @@
       %td= state.country
       %td= state.name
       %td= state.code
-      %td= link_to 'Show', state
-      %td= link_to 'Edit', edit_state_path(state)
-      %td= link_to 'Destroy', state, method: :delete, data: { confirm: 'Are you sure?' }
+      %td= link_to 'Show', [:super_admin,state]
+      %td= link_to 'Edit', edit_super_admin_state_path(state)
+      %td= link_to 'Destroy', [:super_admin,state], method: :delete, data: { confirm: 'Are you sure?' }
 
 %br
 
-= link_to 'New State', new_state_path
+= link_to 'New State', new_super_admin_state_path

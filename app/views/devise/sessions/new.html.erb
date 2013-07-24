@@ -1,5 +1,4 @@
 <h2>Sign in</h2>
- <%= link_to "facebook", user_omniauth_authorize_path(:facebook, :display=>"popup"), :class => "fbpopup" %>
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
   <div><%= f.label :login ,"User name/Email"%><br />
   <%= f.text_field :login, :autofocus => true %></div>
@@ -14,4 +13,4 @@
   <div><%= f.submit "Sign in" %></div>
 <% end %>
 
-<%= render "devise/shared/links" %>
+
